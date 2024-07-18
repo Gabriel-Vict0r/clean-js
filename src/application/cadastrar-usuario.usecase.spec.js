@@ -9,6 +9,7 @@ describe('Cadastrar usuário useCase', () => {
 
     test('deve poder cadastrar um usuário', async () => {
         const usuarioDTO = { nome: 'gabriel', cpf: '000.000.000-00', endereco: 'rua joquim neto', telefone: '(77) 9999-9999', email: 'gabriel@gmail.com' }
+        
         const sut = cadastrarUsuarioUsecase({usuariosRepository});
 
         const output = await sut(usuarioDTO);
@@ -22,4 +23,8 @@ describe('Cadastrar usuário useCase', () => {
         expect(() => cadastrarUsuarioUsecase({})).toThrow(new AppError(AppError.dependencias))
     });
     
+    test('deve retornar um throw Error se os campos obrigatórios não forem fornecidos', async () => {
+                const sut = cadastrarUsuarioUsecase({usuariosRepository});
+        await expect(() => sut({})).rejects.toThrow(new AppError(AppError.parametros))
+    })
 });
