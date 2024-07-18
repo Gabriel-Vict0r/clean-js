@@ -1,3 +1,4 @@
+const AppError = require("../shared/errors/AppError");
 const cadastrarUsuarioUsecase = require("./cadastrar-usuario.usecase");
 
 
@@ -18,7 +19,7 @@ describe('Cadastrar usuário useCase', () => {
     });
 
     test('deve retornar um throw Error', () => {
-        expect(() => cadastrarUsuarioUsecase({})).toThrow('usuariosRepository não informado')
+        expect(() => cadastrarUsuarioUsecase({})).toThrow(new AppError(AppError.dependencias))
     });
     
 });
