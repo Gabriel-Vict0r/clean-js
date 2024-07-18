@@ -34,3 +34,4 @@ nome do usuário, cpf, data de saída, data de retorno
 [] - caso o usuário atrasar será gerada uma multa fixa (10 reais)
 
 [] - mostrar todos os empréstimos pendentes com o nome do livro, nome do usuário, CPF, data de retorno e data de saída. Ordenar pela data de retorno mais antiga
+
