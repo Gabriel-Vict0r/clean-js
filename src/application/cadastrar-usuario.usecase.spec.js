@@ -16,4 +16,9 @@ describe('Cadastrar usuário useCase', () => {
         expect(usuariosRepository.cadastrar).toHaveBeenCalledWith(usuarioDTO);
         expect(usuariosRepository.cadastrar).toHaveBeenCalledTimes(1);
     });
+
+    test('deve retornar um throw Error', () => {
+        expect(() => cadastrarUsuarioUsecase({})).toThrow('usuariosRepository não informado')
+    });
+    
 });
