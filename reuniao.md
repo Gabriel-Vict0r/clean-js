@@ -35,3 +35,6 @@
 
 
 ## Estruturas
+
+## UsuariosRepository
+[] cadastrar: ({nome_completo, CPF, telefone, endereco, email}) => Promise<void>
